@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir Today Tours | Premium J&K Travel Portal</title>
+    <meta name="description" content="Official Govt. Registered Tour Operator (JKEA0004559). Best 6N/7D Katra to Katra Packages, Luxury Houseboats & Premium Cabs.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #004d40;    /* Deep Emerald Green */
+            --secondary: #d84315;  /* Brick/Saffron Orange */
+            --gold: #ffb300;       /* Luxury Gold */
+            --dark: #101820;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 12px 40px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        /* --- GLOBAL SETTINGS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light); color: #444; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); font-weight: 700; }
+        a { text-decoration: none; transition: 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- 1. TOP UTILITY BAR --- */
+        .top-bar {
+            background: var(--dark); color: white; padding: 10px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .license-tag { background: var(--secondary); color: white; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; }
+        .socials a { color: rgba(255,255,255,0.8); margin-left: 15px; font-size: 1.1rem; }
+        .socials a:hover { color: var(--gold); }
+
+        /* --- 2. MEGA HEADER --- */
+        header {
+            background: rgba(255, 255, 255, 0.98); padding: 15px 5%;
+            position: sticky; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary); text-transform: uppercase; line-height: 1; letter-spacing: -0.5px; }
+        .logo span { color: var(--secondary); }
+        .logo small { display: block; font-size: 0.65rem; color: #777; letter-spacing: 2px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; margin-top: 4px; }
+        
+        .header-btn {
+            background: var(--primary); color: white; padding: 12px 30px;
+            border-radius: 50px; font-weight: 600; display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 5px 15px rgba(0, 77, 64, 0.2);
+        }
+        .header-btn:hover { background: var(--secondary); transform: translateY(-2px); }
+
+        /* --- 3. PORTAL HERO SECTION --- */
+        .hero {
+            position: relative; height: 85vh; width: 100%;
+            background: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); }
+        .hero-content { position: relative; z-index: 2; width: 90%; max-width: 900px; color: white; }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; color: white; text-shadow: 0 10px 30px rgba(0,0,0,0.5); line-height: 1.1; }
+        .hero p { font-size: 1.4rem; font-weight: 300; margin-bottom: 40px; opacity: 0.95; }
+
+        /* --- SEARCH BAR UI (Like Kashmir today) --- */
+        .search-box {
+            background: white; padding: 20px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            display: flex; gap: 15px; width: 100%; max-width: 850px; margin: 0 auto; flex-wrap: wrap;
+        }
+        .search-item { flex: 1; min-width: 150px; text-align: left; position: relative; }
+        .search-item label { display: block; font-size: 0.75rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 5px; }
+        .search-item select, .search-item input { width: 100%; padding: 10px 0; border: none; border-bottom: 2px solid #eee; font-weight: 600; color: var(--dark); font-size: 1rem; outline: none; bg: transparent; }
+        .search-btn {
+            background: var(--secondary); color: white; border: none; padding: 0 40px; border-radius: 10px;
+            font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .search-btn:hover { background: var(--primary); }
+
+        /* --- 4. PACKAGE HIGHLIGHT (KATRA TO KATRA) --- */
+        .section { padding: 80px 5%; }
+        .section-header { text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .section-header h2 { font-size: 3rem; margin-bottom: 15px; }
+        .section-header p { color: #666; font-size: 1.1rem; }
+
+        .timeline-container {
+            display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; max-width: 1200px; margin: 0 auto;
+        }
+        .timeline-list { border-left: 3px solid #e0e0e0; padding-left: 30px; }
+        .timeline-item { position: relative; padding-bottom: 40px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -38px; top: 5px; width: 16px; height: 16px;
+            background: var(--secondary); border: 3px solid white; border-radius: 50%; box-shadow: 0 0 0 1px #ccc;
+        }
+        .timeline-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
+        .timeline-desc { font-size: 0.95rem; color: #555; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .pkg-sidebar { position: sticky; top: 100px; height: fit-content; }
+        .price-card {
+            background: var(--primary); color: white; padding: 40px; border-radius: 20px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .price-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.1; }
+        .big-price { font-size: 3rem; font-weight: 700; font-family: 'Playfair Display', serif; color: var(--gold); }
+        .price-sub { font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px; }
+        .feature-list { text-align: left; margin: 30px 0; }
+        .feature-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1rem; }
+        .feature-list i { color: var(--gold); }
+
+        /* --- 5. MASSIVE HOTEL DIRECTORY (Tabs) --- */
+        .tabs-wrapper { max-width: 1300px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow); }
+        .tabs-nav { display: flex; gap: 15px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn {
+            padding: 12px 30px; border: 1px solid #eee; background: #f9f9f9; border-radius: 50px;
+            font-weight: 600; cursor: pointer; transition: 0.3s; color: #666;
+        }
+        .tab-btn.active, .tab-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        .tab-content { display: none; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; animation: fadeIn 0.5s; }
+        .tab-content.active { display: grid; }
+        
+        .hotel-item {
+            display: flex; align-items: center; gap: 15px; padding: 15px;
+            border: 1px solid #eee; border-radius: 10px; transition: 0.3s;
+        }
+        .hotel-item:hover { border-color: var(--secondary); transform: translateX(5px); }
+        .hotel-icon { width: 40px; height: 40px; background: rgba(0, 77, 64, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+        .hotel-name { font-weight: 600; font-size: 0.95rem; color: var(--dark); }
+
+        /* --- 6. TRANSPORT FLEET --- */
+        .fleet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1300px; margin: 0 auto; }
+        .fleet-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; }
+        .fleet-card:hover { transform: translateY(-10px); }
+        .fleet-img { height: 200px; background: #eee; position: relative; }
+        .fleet-img img { width: 100%; height: 100%; object-fit: cover; }
+        .fleet-info { padding: 25px; }
+        .fleet-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: var(--primary); }
+        .fleet-tags { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .tag { font-size: 0.75rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; font-weight: 600; color: #555; }
+
+        /* --- 7. INCLUSIONS & EXCLUSIONS --- */
+        .terms-box { display: grid; grid-template-columns: 1fr 1fr; border-radius: 20px; overflow: hidden; max-width: 1000px; margin: 0 auto; box-shadow: var(--shadow); }
+        .col-inc { background: white; padding: 40px; }
+        .col-exc { background: #ffebee; padding: 40px; }
+        .term-list li { margin-bottom: 12px; display: flex; gap: 12px; align-items: center; font-size: 0.95rem; }
+        .col-inc i { color: #2e7d32; }
+        .col-exc i { color: #c62828; }
+
+        /* --- 8. FOOTER --- */
+        footer { background: var(--dark); color: #999; padding: 80px 5% 30px; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; padding-bottom: 50px; border-bottom: 1px solid #333; }
+        .footer-col h4 { color: white; margin-bottom: 25px; letter-spacing: 1px; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #999; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .reg-badge { border: 1px solid #444; padding: 10px; display: inline-block; margin-top: 20px; color: var(--gold); border-radius: 6px; }
+
+        /* --- 9. MODAL & FLOAT --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 32px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); z-index: 2000; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 3000; backdrop-filter: blur(8px); justify-content: center; align-items: center; }
+        .modal-content { background: white; width: 95%; max-width: 500px; padding: 40px; border-radius: 20px; position: relative; animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; color: var(--primary); }
+        .form-input { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: #f8f9fa; }
+        .submit-btn { width: 100%; padding: 16px; background: var(--secondary); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        .submit-btn:hover { background: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .timeline-container { grid-template-columns: 1fr; }
+            .pkg-sidebar { position: static; order: -1; margin-bottom: 40px; }
+            .terms-box { grid-template-columns: 1fr; }
+            .search-box { flex-direction: column; padding: 15px; }
+            .search-item { width: 100%; }
+            .search-btn { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>
+            <span class="license-tag">GOVT REGD</span> License No: JKEA0004559
+        </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/share/1CTnfbcbp4/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kashmirtoday.tours?igsh=d280a3h4bHpzaW9v" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917006621855"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            Kashmir<span>Today</span>
+            <small>TOURS & TRAVELS</small>
+        </div>
+        <a href="#" onclick="openModal()" class="header-btn">
+            <i class="fas fa-calendar-check"></i> Book Now
+        </a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Experience the Paradise<br>Like Never Before</h1>
+            <p>Premium Hotels • Luxury Fleets • Customized Itineraries</p>
+            
+            <div class="search-box">
+                <div class="search-item">
+                    <label>Destination</label>
+                    <select id="hero-dest">
+                        <option>Kashmir Complete (7D)</option>
+                        <option>Srinagar Only</option>
+                        <option>Gulmarg Special</option>
+                    </select>
+                </div>
+                <div class="search-item">
+                    <label>Room Category</label>
+                    <select id="hero-room">
+                        <option>Deluxe</option>
+                        <option>Super Deluxe</option>
+                        <option>Premium</option>
+                        <option>Family Suite</option>
+                        <option>Interconnected</option>
+                    </select>
+                </div>
+                <button onclick="openModal()" class="search-btn">GET QUOTE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Best Seller: Katra to Katra</h2>
+            <p>Our most popular 6 Nights / 7 Days package starting and ending at Katra Railway Station.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-list">
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 01: Arrival & Drive to Pahalgam</h3>
+                    <div class="timeline-desc">Pickup from Katra. Drive via Chenani-Nashri Tunnel (India's Longest). Check-in at <strong>Hotel Kloof Orchid</strong> (Centrally Heated).</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 02: Pahalgam Sightseeing</h3>
+                    <div class="timeline-desc">Visit Aru, Betaab Valley & Chandanwari. Evening drive to Gulmarg. Overnight stay in Gulmarg.</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 03: Gulmarg to Srinagar</h3>
+                    <div class="timeline-desc">Gondola Ride (Phase 1 & 2). Visit Golf Course. Drive to Srinagar. Stay at <strong>Hotel Chinar Inn</strong>.</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 04: Sonmarg Excursion</h3>
+                    <div class="timeline-desc">Day trip to Sonmarg (Meadow of Gold). Visit Thajiwas Glacier. Night stay at <strong>Nazneen Houseboats</strong> (Dal Lake).</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 05: Doodhpathri Trip</h3>
+                    <div class="timeline-desc">Explore the lush meadows of Doodhpathri. Return to Srinagar for shopping and leisure.</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 06: Srinagar Leisure</h3>
+                    <div class="timeline-desc">Shankaracharya Temple, Mughal Gardens. 1 Hour Complimentary Shikara Ride. Overnight Srinagar.</div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Day 07: Departure</h3>
+                    <div class="timeline-desc">Drop at Katra Railway Station with sweet memories.</div>
+                </div>
+            </div>
+
+            <div class="pkg-sidebar">
+                <div class="price-card">
+                    <div class="price-sub">Starting From</div>
+                    <div class="big-price">₹13,900</div>
+                    <div class="price-sub">Per Person (5 Pax Group)</div>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Transport:</strong> Tavera Cab</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Stay:</strong> 2 Deluxe Rooms + Extra Bed</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Meals:</strong> Breakfast & Dinner</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bonus:</strong> 1 Hr Shikara Ride</li>
+                    </ul>
+                    <a href="#" onclick="openModal()" class="header-btn" style="background: white; color: var(--primary); justify-content: center;">Request Booking</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f0f4f8;">
+        <div class="section-header">
+            <h2>Our Premium Fleet</h2>
+            <p>Choose the perfect ride for your family and group size.</p>
+        </div>
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <div class="fleet-img"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=500" alt="Etios"></div>
+                <div class="fleet-info">
+                    <h3 class="fleet-title">Toyota Etios / Dzire</h3>
+                    <p>Perfect for couples & small families (2-3 Pax).</p>
+                    <div class="fleet-tags"><span class="tag">Sedan</span><span class="tag">AC</span></div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-img"><img src="https://images.unsplash.com/photo-1632245889029-e413c634e1a8?auto=format&fit=crop&w=500" alt="Tavera"></div>
+                <div class="fleet-info">
+                    <h3 class="fleet-title">Chevrolet Tavera</h3>
+                    <p>Robust & comfortable for hilly terrain (5-7 Pax).</p>
+                    <div class="fleet-tags"><span class="tag">SUV</span><span class="tag">High Ground Clearance</span></div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-img"><img src="https://images.unsplash.com/photo-1550505393-2c6cf67f22f7?auto=format&fit=crop&w=500" alt="Innova"></div>
+                <div class="fleet-info">
+                    <h3 class="fleet-title">Toyota Innova Crysta</h3>
+                    <p>The gold standard of luxury travel in Kashmir.</p>
+                    <div class="fleet-tags"><span class="tag">Premium</span><span class="tag">Captain Seats</span></div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-img"><img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=500" alt="Tempo"></div>
+                <div class="fleet-info">
+                    <h3 class="fleet-title">Tempo Traveller</h3>
+                    <p>Ideal for large groups (12-17 Pax). Pushback seats.</p>
+                    <div class="fleet-tags"><span class="tag">Group</span><span class="tag">Spacious</span></div>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-img"><img src="https://images.unsplash.com/photo-1678782071987-a22c9a923769?auto=format&fit=crop&w=500" alt="Urbania"></div>
+                <div class="fleet-info">
+                    <h3 class="fleet-title">Force Urbania</h3>
+                    <p>Ultra-Luxury van for VIP group experiences.</p>
+                    <div class="fleet-tags"><span class="tag">VIP</span><span class="tag">Modern</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Partner Hotels</h2>
+            <p>We partner with the best properties across all categories.</p>
+        </div>
+
+        <div class="tabs-wrapper">
+            <div class="tabs-nav">
+                <div class="tab-btn active" onclick="openTab('srinagar')">Srinagar Hotels</div>
+                <div class="tab-btn" onclick="openTab('gulmarg')">Gulmarg Hotels</div>
+                <div class="tab-btn" onclick="openTab('pahalgam')">Pahalgam Hotels</div>
+                <div class="tab-btn" onclick="openTab('houseboat')">Premium Houseboats</div>
+            </div>
+
+            <div id="srinagar" class="tab-content active">
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Radisson Srinagar</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Vivanta Dal View</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Four Points by Sheraton</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Lemon Tree Hotel</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Chinar Inn</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Grand Mamta</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Solar Residency</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Royal Batoo</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Metropolis</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-hotel"></i></div><div class="hotel-name">Hotel Duke</div></div>
+            </div>
+
+            <div id="gulmarg" class="tab-content">
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">The Khyber Himalayan Resort</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Hotel Highlands Park</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Hotel Rosewood</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Hotel Heevan Retreat</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Grand Mumtaz Gulmarg</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Hotel Pine Spring</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Hotel Hilltop</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-snowflake"></i></div><div class="hotel-name">Royal Castle Gulmarg</div></div>
+            </div>
+
+            <div id="pahalgam" class="tab-content">
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">ITC Pine N Peak</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">WelcomHotel by ITC</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Hotel Kloof Orchid</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Hotel Heevan Pahalgam</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Pahalgam Hotel</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Hotel Mountview</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Hotel Baisaran</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-tree"></i></div><div class="hotel-name">Hotel Abshar</div></div>
+            </div>
+
+            <div id="houseboat" class="tab-content">
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Nazneen Group Houseboats</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Mascot Houseboats (Nigeen)</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Wangnoo Houseboats</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Sukoon Houseboat</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Meena Group</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Royal Group</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Peacock Houseboats</div></div>
+                <div class="hotel-item"><div class="hotel-icon"><i class="fas fa-ship"></i></div><div class="hotel-name">Clermont Houseboats</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="terms-box">
+            <div class="col-inc">
+                <h3><i class="fas fa-check-circle"></i> Inclusions</h3>
+                <ul class="term-list">
+                    <li><i class="fas fa-check"></i> Tavera/Etios/Innova (As per plan)</li>
+                    <li><i class="fas fa-check"></i> Breakfast & Dinner Included</li>
+                    <li><i class="fas fa-check"></i> 1 Hr Shikara Ride Complimentary</li>
+                    <li><i class="fas fa-check"></i> All Tolls, Taxes & Driver Allowance</li>
+                    <li><i class="fas fa-check"></i> Pickup & Drop (Katra/Srinagar)</li>
+                </ul>
+            </div>
+            <div class="col-exc">
+                <h3><i class="fas fa-times-circle"></i> Exclusions</h3>
+                <ul class="term-list">
+                    <li><i class="fas fa-times"></i> Chain Cab (Tangmarg to Gulmarg)</li>
+                    <li><i class="fas fa-times"></i> Union Taxi (Aru/Betaab/Sonmarg)</li>
+                    <li><i class="fas fa-times"></i> Gondola Tickets & Pony Rides</li>
+                    <li><i class="fas fa-times"></i> Garden Entry Fees</li>
+                    <li><i class="fas fa-times"></i> Personal Expenses & Lunch</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Kashmir Today Tours</h4>
+                <p>Govt. Registered Tour & Travel Operator providing authentic Kashmir experiences.</p>
+                <div class="reg-badge">License: JKEA0004559</div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="#">Tour Packages</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Sopore, Baramulla, Kashmir</li>
+                    <li><i class="fas fa-phone"></i> +91 70066 21855</li>
+                    <li><i class="fas fa-envelope"></i> kaashmirtoday@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px;">
+            &copy; 2026 Kashmir Today Tours. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/917006621855" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" style="position: absolute; right: 20px; top: 20px; font-size: 24px; cursor: pointer;">&times;</span>
+            <h3 style="text-align: center; margin-bottom: 20px;">Plan Your Trip</h3>
+            <form onsubmit="sendToWhatsapp(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" class="form-input" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>Travel Date</label>
+                    <input type="date" id="date" class="form-input" required>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <div style="flex:1"><label>Adults</label><input type="number" id="adults" class="form-input" value="2"></div>
+                    <div style="flex:1"><label>Children</label><input type="number" id="children" class="form-input" value="0"></div>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Room Category</label>
+                    <select id="room" class="form-input">
+                        <option>Standard</option>
+                        <option>Deluxe</option>
+                        <option>Super Deluxe</option>
+                        <option>Premium</option>
+                        <option>Family Suite</option>
+                        <option>Family Interconnected</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Vehicle</label>
+                    <select id="vehicle" class="form-input">
+                        <option>Etios / Dzire</option>
+                        <option>Tavera</option>
+                        <option>Innova</option>
+                        <option>Innova Crysta</option>
+                        <option>Tempo Traveller</option>
+                        <option>Urbania</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Send on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('bookingModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('bookingModal').style.display = 'none'; }
+        
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            var btns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < x.length; i++) { x[i].style.display = "none"; x[i].classList.remove("active"); }
+            for (i = 0; i < btns.length; i++) { btns[i].classList.remove("active"); }
+            document.getElementById(tabName).style.display = "grid";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        window.onclick = function(e) { if(e.target == document.getElementById('bookingModal')) closeModal(); }
+
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+            let name = document.getElementById('name').value;
+            let date = document.getElementById('date').value;
+            let adults = document.getElementById('adults').value;
+            let children = document.getElementById('children').value;
+            let room = document.getElementById('room').value;
+            let vehicle = document.getElementById('vehicle').value;
+
+            let msg = `*New Trip Enquiry*%0A%0A` +
+                      `*Name:* ${name}%0A` +
+                      `*Date:* ${date}%0A` +
+                      `*Pax:* ${adults} Adults, ${children} Kids%0A` +
+                      `*Room:* ${room}%0A` +
+                      `*Vehicle:* ${vehicle}%0A%0A` +
+                      `Please quote the best price.`;
+            
+            window.open(`https://wa.me/917006621855?text=${msg}`, '_blank');
+            closeModal();
+        }
+    </script>
+
+</body>
+</html>
